@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<head>
+<style>
+body{
+	background-color: rgb(39,60,78);
+}
+.error{
+	color: red;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	height: 30px;
+	font-size: 30;
+}
+.inputField{
+	margin-left:20%;
+	margin-right:20%;
+	margin-top:5%;
+	margin-bottom:3%;
+	text-align:center;
+	font-size:xx-large;
+	width:60%;
+	border-radius: 10px; 
+	height:10%;
+}
+.result{
+	margin-left:40%;
+	margin-right:40%;
+	width:20%;
+	height:10%;
+	border-radius: 10px; 
+	font-size:xx-large;
+	background-color:rgb(217,217,217);
+	border:30px;
+	border-color: rgb(157,157,157);
+}
+.wrapper{
+	color:#fff;
+}
+</style>
+
+    <title>Calculator</title>
+</head>
+<body>
+<form wicket:id="form" method="get">
+    <div class="error" id="error" wicket:id="errorInfo"></div>
+    <br/>
+    <br/>
+    <input class="inputField" wicket:id="inputField" type="text" value=""/>
+	<input class="result" type="button" wicket:id="result" value="Result"/>
+    	<div class="wrapper">
+            <table class="wrapper">
+	            <tr>
+		            <th>
+		            	The following operators are supported:
+		            </th>
+	            </tr>
+	            <tr>
+	            	<td>(</td>
+	            	<td>open parentheses</td>
+	            </tr>
+				<tr>
+					<td>)</td>
+					<td> closed parentheses</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td> addition (for numbers and strings)</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td> subtration</td>
+				</tr>
+				<tr>
+					<td>* </td>
+					<td>mutliplication</td>
+				</tr>
+				<tr>
+					<td>/ </td>
+					<td>division</td>
+				</tr>
+				<tr>
+					<td>%</td>  
+					<td>modulus</td>
+				</tr>
+			</table>
+				<h3>abs</h3> Returns the absolute value of a double value<br/> abs(-4.5) returns 4.5<br/>			
+￼￼￼￼￼￼￼￼￼￼￼				<h3>ceil</h3> Returns the ceiling value of a double value<br/> ceil(-4.5) returns -4.0<br/>
+				￼￼￼￼￼￼￼￼￼<h3>cos</h3> Returns the trigonometric cosine of an angle<br/> cos(2.3) returns -0.666276021279824<br/>
+￼￼￼￼￼￼￼￼￼￼￼￼				<h3>exp</h3> Returns the exponential number e (i.e., 2.718...) raised to the power of a double<br/> valueexp(2.3) returns 9.974182454814718<br/>
+￼				<h3>floor</h3> Returns the floor value of a double value<br/> floor(2.3) returns 2.0<br/>
+				<h3>log</h3> Returns the natural logarithm (base e) of a double value<br/> log(2.3) returns 0.832909122935104<br/>
+				￼￼￼￼￼￼￼￼￼￼￼￼<h3>max</h3> Returns the greater of two double values<br/> max(2.3,3.6999999999999997) returns 3.6999999999999997<br/>
+￼￼￼￼￼￼￼￼				<h3>min</h3> Returns the smaller of two double values<br/> min(2.3,3.6999999999999997) returns 2.3<br/>
+￼￼￼￼￼￼￼￼￼￼￼￼				<h3>pow</h3>Returns the value of the first argument raised to the second power of the second argument<br/> pow(2.3,3.6999999999999997) returns 21.796812747431176<br/>
+￼￼￼￼￼￼￼￼￼				<h3>random</h3>Returns a random double value greater than or equal to 0.0 and less than 1.0<br/> random() returns 0.6785751727342079<br/>
+				￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼<h3>round</h3> Rounds a value to a specified number of digits<br/> round(2.3) returns 2<br/>
+				<h3>￼￼￼￼￼￼￼￼sin</h3>￼Returns the sine of an angle<br/> sin(2.3) returns 0.7457052121767203<br/>
+				<h3>sqrt</h3> Returns the square root of a double value<br/> sqrt(25) returns 5.0<br/>
+￼￼￼￼￼￼￼￼				<h3>tan</h3> Returns the trigonometric tangent of an angle<br/> tan(2.3) returns -1.1192136417341325<br/>
+				￼￼￼￼￼￼￼￼￼￼￼￼<h3>toDegrees</h3> Converts an angle measured in radians to the equivalent angle measured in degrees<br/> toDegrees(2.3) returns 131.78029288008932<br/>
+￼￼￼￼￼￼￼￼￼				<h3>toRadians</h3> Converts an angle measured in degrees to the equivalent angle measured in radians<br/> toRadians(2.3) returns 0.04014257279586957<br/>
+		</div>		
+	</form>
+</body>
+</html>
