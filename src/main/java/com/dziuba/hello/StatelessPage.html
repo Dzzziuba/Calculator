@@ -16,12 +16,22 @@ body{
 .inputField{
 	margin-left:20%;
 	margin-right:20%;
-	margin-top:5%;
+	/* margin-top:5%;*/
 	margin-bottom:3%;
 	text-align:center;
 	font-size:xx-large;
 	width:60%;
 	border-radius: 10px; 
+	height:10%;
+}
+.title{
+	color: #fff;
+	margin-left:20%;
+	margin-right:20%;
+	margin-top:5%;
+	text-align:center;
+	font-size:xx-large;
+	width:60%;
 	height:10%;
 }
 .result{
@@ -32,6 +42,19 @@ body{
 	border-radius: 10px; 
 	font-size:xx-large;
 	background-color:rgb(217,217,217);
+	border:30px;
+	border-color: rgb(157,157,157);
+}
+.buttons{
+	margin-left:30%;
+	margin-right:30%;
+	width:40%;
+}
+.button{
+	width:100%;
+	border-radius: 10px; 
+	font-size:xx-large;
+	background-color:orange;
 	border:30px;
 	border-color: rgb(157,157,157);
 }
@@ -47,8 +70,31 @@ body{
     <div class="error" id="error" wicket:id="errorInfo"></div>
     <br/>
     <br/>
-    <input class="inputField" wicket:id="inputField" type="text" value=""/>
-	<input class="result" type="button" wicket:id="result" value="Result"/>
+    <div>
+    <h2 class="title">Input your expression here.</h2>
+    	<input name="inputField" id="inputField" class="inputField" wicket:id="inputField" type="text" value="" autofocus/>
+	</div>
+	<table class="buttons">
+		<tr>
+			<td><input class="button" type="button" value = "(" onclick="add('(')"/></td>
+			<td><input class="button" type="button" value = ")" onclick="add(')')"/></td>
+			<td><input class="button" type="button" value = "+" onclick="add('+')"/></td>
+			<td><input class="button" type="button" value = "-" onclick="add('-')"/></td>
+		</tr>
+		<tr>
+			<td><input class="button" type="button" value = "*" onclick="add('*')"/></td>
+			<td><input class="button" type="button" value = "/" onclick="add('/')"/></td>
+			<td><input class="button" type="button" value = "%" onclick="add('%')"/></td>
+			<td><input class="button" type="button" value = "," onclick="add(',')"/></td>
+		</tr>
+	</table>
+	<input class="result" type="button" wicket:id="result" value="="/>
+	<script>
+	function add(symbol) {
+		document.getElementsByName("inputField")[0].value+=symbol;
+		document.getElementsByName("inputField")[0].focus();
+	}
+	</script>
     	<div class="wrapper">
             <table class="wrapper">
 	            <tr>
