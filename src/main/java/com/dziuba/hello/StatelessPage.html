@@ -35,14 +35,10 @@ body{
 	height:10%;
 }
 .result{
-	margin-left:40%;
-	margin-right:40%;
-	width:20%;
-	height:10%;
+	width:100%;
 	border-radius: 10px; 
 	font-size:xx-large;
-	background-color:rgb(217,217,217);
-	border:30px;
+	background-color:rgb(157,157,157);
 	border-color: rgb(157,157,157);
 }
 .buttons{
@@ -51,10 +47,18 @@ body{
 	width:40%;
 }
 .button{
-	width:100%;
+	 width:100%;
 	border-radius: 10px; 
 	font-size:xx-large;
 	background-color:orange;
+	border:30px;
+	border-color: rgb(157,157,157);
+}
+.number{
+	width:100%; 
+	border-radius: 10px; 
+	font-size:xx-large;
+	background-color: rgb(217,217,217);
 	border:30px;
 	border-color: rgb(157,157,157);
 }
@@ -72,27 +76,50 @@ body{
     <br/>
     <div>
     <h2 class="title">Input your expression here.</h2>
-    	<input name="inputField" id="inputField" class="inputField" wicket:id="inputField" type="text" value="" autofocus/>
+    	<input name="inputField" id="inputField" class="inputField" wicket:id="inputField" type="text" placeholder="Expression" value="" autofocus/>
 	</div>
 	<table class="buttons">
 		<tr>
+			<td><input class="button" type="button" value = "<-" onclick="del()"/></td>
 			<td><input class="button" type="button" value = "(" onclick="add('(')"/></td>
 			<td><input class="button" type="button" value = ")" onclick="add(')')"/></td>
-			<td><input class="button" type="button" value = "+" onclick="add('+')"/></td>
+			<td><input class="button" type="button" value = "%" onclick="add('%')"/></td>
+		</tr>
+		<tr>
+			<td><input class="number" type="button" value = "7" onclick="add('7')"/></td>
+			<td><input class="number" type="button" value = "8" onclick="add('8')"/></td>
+			<td><input class="number" type="button" value = "9" onclick="add('9')"/></td>
+			<td><input class="button" type="button" value = "/" onclick="add('/')"/></td>
+		</tr>
+		<tr>
+			<td><input class="number" type="button" value = "4" onclick="add('4')"/></td>
+			<td><input class="number" type="button" value = "5" onclick="add('5')"/></td>
+			<td><input class="number" type="button" value = "6" onclick="add('6')"/></td>
+			<td><input class="button" type="button" value = "*" onclick="add('*')"/></td>
+		</tr>
+		<tr>
+			<td><input class="number" type="button" value = "1" onclick="add('1')"/></td>
+			<td><input class="number" type="button" value = "2" onclick="add('2')"/></td>
+			<td><input class="number" type="button" value = "3" onclick="add('3')"/></td>
 			<td><input class="button" type="button" value = "-" onclick="add('-')"/></td>
 		</tr>
 		<tr>
-			<td><input class="button" type="button" value = "*" onclick="add('*')"/></td>
-			<td><input class="button" type="button" value = "/" onclick="add('/')"/></td>
-			<td><input class="button" type="button" value = "%" onclick="add('%')"/></td>
-			<td><input class="button" type="button" value = "," onclick="add(',')"/></td>
+			<td colspan="2"><input class="number" type="button" value = "0" onclick="add('0')"/></td>
+			<td><input class="number" type="button" value = "." onclick="add('.')"/></td>
+			<td><input class="button" type="button" value = "+" onclick="add('+')"/></td>
+		</tr>
+		<tr>
+			<td colspan="3"><input class="result" type="button" wicket:id="result" value="="/></td>
 		</tr>
 	</table>
-	<input class="result" type="button" wicket:id="result" value="="/>
 	<script>
 	function add(symbol) {
 		document.getElementsByName("inputField")[0].value+=symbol;
 		document.getElementsByName("inputField")[0].focus();
+	}
+	function del(){
+		var input = document.getElementsByName("inputField")[0].value.toString();
+		document.getElementsByName("inputField")[0].value=input.substr(0,--input.length);;
 	}
 	</script>
     	<div class="wrapper">
